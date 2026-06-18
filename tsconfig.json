@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/quick-chat-api-e2e"
+    },
+    {
+      "path": "./apps/quick-chat-api"
+    },
+    {
+      "path": "./quick-chat-shared-types"
+    },
+    {
+      "path": "./quick-chat-shared-utils"
+    }
+  ]
+}

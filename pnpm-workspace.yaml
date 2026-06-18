@@ -1,0 +1,9 @@
+packages:
+  - 'quick-chat-*'
+
+autoInstallPeers: true
+
+onlyBuiltDependencies:
+  - nx
+  - '@prisma/engines'
+  - prisma
