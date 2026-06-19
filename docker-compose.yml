@@ -10,7 +10,7 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - quick_chat_postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
 
   redis:
     image: redis:7-alpine
@@ -18,9 +18,23 @@ services:
     restart: unless-stopped
     ports:
       - '6379:6379'
-    volumes:
-      - quick_chat_redis_data:/data
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/quick-chat-api/Dockerfile
+    container_name: quick-chat-api
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      PORT: 3000
+      DATABASE_URL: postgresql://postgres:root@postgres:5432/quick_chat_db?schema=public
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      - postgres
+      - redis
 
 volumes:
-  quick_chat_postgres_data:
-  quick_chat_redis_data:
+  postgres_data:
