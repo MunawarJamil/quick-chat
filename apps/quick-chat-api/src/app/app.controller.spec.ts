@@ -13,9 +13,16 @@ describe('AppController', () => {
   });
 
   describe('getData', () => {
-    it('should return "Hello API"', () => {
+    it('returns data from the application service', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({message: 'Hello API'});
+      expect(appController.getData()).toEqual({
+        message: 'Hello Shared Utils',
+        user: {
+          id: '1',
+          email: 'test@quickchat.com',
+          name: 'Munawar',
+        },
+      });
     });
   });
 });

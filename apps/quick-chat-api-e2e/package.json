@@ -1,26 +1,5 @@
 {
   "name": "@quick-chat/quick-chat-api-e2e",
   "version": "0.0.1",
-  "private": true,
-  "nx": {
-    "implicitDependencies": [
-      "@quick-chat/quick-chat-api"
-    ],
-    "targets": {
-      "e2e": {
-        "executor": "@nx/jest:jest",
-        "outputs": [
-          "{projectRoot}/test-output/jest/coverage"
-        ],
-        "dependsOn": [
-          "@quick-chat/quick-chat-api:build",
-          "@quick-chat/quick-chat-api:serve"
-        ],
-        "options": {
-          "jestConfig": "apps/quick-chat-api-e2e/jest.config.cts",
-          "passWithNoTests": true
-        }
-      }
-    }
-  }
+  "private": true
 }
