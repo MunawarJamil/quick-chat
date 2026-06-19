@@ -1,7 +1,17 @@
-import { quickChatSharedTypes } from './quick-chat-shared-types.js';
+import type { UserDto } from './quick-chat-shared-types.js';
 
-describe('quickChatSharedTypes', () => {
-  it('should work', () => {
-    expect(quickChatSharedTypes()).toEqual('quick-chat-shared-types');
+describe('UserDto', () => {
+  it('describes a user', () => {
+    const user: UserDto = {
+      id: '1',
+      email: 'test@quickchat.com',
+      name: 'Munawar',
+    };
+
+    expect(user).toEqual({
+      id: '1',
+      email: 'test@quickchat.com',
+      name: 'Munawar',
+    });
   });
 });

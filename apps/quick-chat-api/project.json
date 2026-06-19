@@ -1,0 +1,25 @@
+{
+  "name": "@quick-chat/quick-chat-api",
+  "root": "apps/quick-chat-api",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "@quick-chat/quick-chat-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "@quick-chat/quick-chat-api:build:development"
+        },
+        "production": {
+          "buildTarget": "@quick-chat/quick-chat-api:build:production"
+        }
+      }
+    }
+  }
+}

@@ -55,26 +55,6 @@
         ],
         "executor": "nx:noop"
       },
-      "serve": {
-        "continuous": true,
-        "executor": "@nx/js:node",
-        "defaultConfiguration": "development",
-        "dependsOn": [
-          "build"
-        ],
-        "options": {
-          "buildTarget": "@quick-chat/quick-chat-api:build",
-          "runBuildTargetDependencies": false
-        },
-        "configurations": {
-          "development": {
-            "buildTarget": "@quick-chat/quick-chat-api:build:development"
-          },
-          "production": {
-            "buildTarget": "@quick-chat/quick-chat-api:build:production"
-          }
-        }
-      },
       "test": {
         "options": {
           "passWithNoTests": true

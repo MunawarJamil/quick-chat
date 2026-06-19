@@ -13,8 +13,15 @@ describe('AppService', () => {
   });
 
   describe('getData', () => {
-    it('should return "Hello API"', () => {
-      expect(service.getData()).toEqual({message: 'Hello API'});
+    it('returns the shared greeting and sample user', () => {
+      expect(service.getData()).toEqual({
+        message: 'Hello Shared Utils',
+        user: {
+          id: '1',
+          email: 'test@quickchat.com',
+          name: 'Munawar',
+        },
+      });
     });
   });
 });
