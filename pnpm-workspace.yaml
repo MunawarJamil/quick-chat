@@ -1,4 +1,5 @@
 packages:
+  - 'apps/*'
   - 'quick-chat-*'
 
 autoInstallPeers: true

@@ -1,0 +1,15 @@
+.git
+.nx
+.pnpm-store
+.env
+.env.*
+node_modules
+**/node_modules
+dist
+**/dist
+out-tsc
+**/out-tsc
+test-output
+**/test-output
+coverage
+**/coverage
