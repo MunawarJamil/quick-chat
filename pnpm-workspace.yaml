@@ -1,8 +1,14 @@
 packages:
   - 'apps/*'
+  - 'prisma'
   - 'quick-chat-*'
 
 autoInstallPeers: true
+ignoredBuiltDependencies:
+  - '@scarf/scarf'
+  - '@sentry/node-cpu-profiler'
+  - bcrypt
+  - esbuild
 
 onlyBuiltDependencies:
   - nx

@@ -9,7 +9,7 @@
     "emitDecoratorMetadata": true,
     "target": "es2021"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "../../prisma/generated/prisma/**/*.ts"],
   "exclude": [
     "out-tsc",
     "dist",
