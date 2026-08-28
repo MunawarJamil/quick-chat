@@ -9,13 +9,15 @@ const adapter = new PrismaPg({
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
+  // Dev seed credentials — password: DevAdmin@123
+  // Re-generate hash: node -e "require('bcrypt').hash('DevAdmin@123',10).then(console.log)"
   const user = await prisma.user.upsert({
     where: { email: 'admin@quickchat.dev' },
     update: {},
     create: {
       email: 'admin@quickchat.dev',
       fullName: 'Munawar Jamil',
-      passwordHash: 'dev_password_hash_replace_later',
+      passwordHash: '$2b$10$9jllgyAMbScwFriUMxN0qOOfHUVLlMGvXag1ttrxh0NHCdqSblTqu',
       emailVerified: true,
     },
   });

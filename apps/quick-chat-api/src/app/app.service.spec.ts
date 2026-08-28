@@ -12,15 +12,12 @@ describe('AppService', () => {
     service = app.get<AppService>(AppService);
   });
 
-  describe('getData', () => {
-    it('returns the shared greeting and sample user', () => {
-      expect(service.getData()).toEqual({
-        message: 'Hello Shared Utils',
-        user: {
-          id: '1',
-          email: 'test@quickchat.com',
-          name: 'Munawar',
-        },
+  describe('getApiInfo', () => {
+    it('returns API metadata', () => {
+      expect(service.getApiInfo()).toEqual({
+        name: 'quick-chat-api',
+        version: '1.0.0',
+        status: 'ok',
       });
     });
   });

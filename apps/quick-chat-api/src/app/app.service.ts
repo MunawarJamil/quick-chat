@@ -1,17 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { hello } from '@quick-chat/quick-chat-shared-utils';
-import type { UserDto } from '@quick-chat/quick-chat-shared-types';
 
 @Injectable()
 export class AppService {
-  getData(): { message: string; user: UserDto } {
+  getApiInfo(): { name: string; version: string; status: string } {
     return {
-      message: hello(),
-      user: {
-        id: '1',
-        email: 'test@quickchat.com',
-        name: 'Munawar',
-      },
+      name: 'quick-chat-api',
+      version: '1.0.0',
+      status: 'ok',
     };
   }
 }

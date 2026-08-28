@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a pnpm-managed Nx monorepo. The NestJS service lives in `apps/quick-chat-api`; application code is under `src/app`, and `src/main.ts` is the entry point. End-to-end tests and their Jest support files live in `apps/quick-chat-api-e2e`. Reusable packages are kept at the repository root in `quick-chat-shared-types` and `quick-chat-shared-utils`; expose public APIs through each package's `src/index.ts`. Keep technical notes in `docs/`. Build output such as `dist/`, Nx cache data, and dependencies are generated and must not be committed.
+This repository is a pnpm-managed Nx monorepo. The NestJS service lives in `apps/quick-chat-api`; application code is under `src/app`, and `src/main.ts` is the entry point. End-to-end tests and their Jest support files live in `apps/quick-chat-api-e2e`. Reusable packages are kept in `shared/quick-chat-shared-types` and `shared/quick-chat-shared-utils`; expose public APIs through each package's `src/index.ts`. Keep technical notes in `docs/`. Build output such as `dist/`, Nx cache data, and dependencies are generated and must not be committed.
 
 ## Build, Test, and Development Commands
 
