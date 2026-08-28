@@ -12,16 +12,13 @@ describe('AppController', () => {
     }).compile();
   });
 
-  describe('getData', () => {
-    it('returns data from the application service', () => {
+  describe('getApiInfo', () => {
+    it('returns API metadata from the application service', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({
-        message: 'Hello Shared Utils',
-        user: {
-          id: '1',
-          email: 'test@quickchat.com',
-          name: 'Munawar',
-        },
+      expect(appController.getApiInfo()).toEqual({
+        name: 'quick-chat-api',
+        version: '1.0.0',
+        status: 'ok',
       });
     });
   });

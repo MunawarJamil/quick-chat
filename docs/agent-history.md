@@ -10,26 +10,26 @@ Quick Chat is an Nx v23 + NestJS + pnpm monorepo.
 
 Naming convention:
 
-* lowercase
-* kebab-case
-* project-prefixed names like `quick-chat-api`, `quick-chat-shared-types`
+- lowercase
+- kebab-case
+- project-prefixed names like `quick-chat-api`, `quick-chat-shared-types`
 
 Current projects:
 
-* `@quick-chat/quick-chat-api`
-* `@quick-chat/quick-chat-api-e2e`
-* `@quick-chat/quick-chat-shared-types`
-* `@quick-chat/quick-chat-shared-utils`
+- `@quick-chat/quick-chat-api`
+- `@quick-chat/quick-chat-api-e2e`
+- `@quick-chat/quick-chat-shared-types`
+- `@quick-chat/quick-chat-shared-utils`
 
 ## Important Decisions
 
-* pnpm is the only package manager.
-* Do not use npm or yarn.
-* Shared libs are workspace packages.
-* Any app importing a shared lib must declare it in its own `package.json` using `workspace:*`.
-* `pnpm-workspace.yaml` only makes packages discoverable; it does not automatically add them as dependencies.
-* No agent should commit code. Human developer commits manually.
-* Agents must plan first and wait for approval before implementation.
+- pnpm is the only package manager.
+- Do not use npm or yarn.
+- Shared libs are workspace packages.
+- Any app importing a shared lib must declare it in its own `package.json` using `workspace:*`.
+- `pnpm-workspace.yaml` only makes packages discoverable; it does not automatically add them as dependencies.
+- No agent should commit code. Human developer commits manually.
+- Agents must plan first and wait for approval before implementation.
 
 ## Completed Work
 
@@ -37,32 +37,30 @@ Current projects:
 
 Summary:
 
-* Created fresh Nx workspace named `quick-chat`.
-* Created NestJS backend app `quick-chat-api`.
-* Created shared libs:
-
-  * `quick-chat-shared-types`
-  * `quick-chat-shared-utils`
+- Created fresh Nx workspace named `quick-chat`.
+- Created NestJS backend app `quick-chat-api`.
+- Created shared libs:
+  - `quick-chat-shared-types`
+  - `quick-chat-shared-utils`
 
 Verification:
 
-* `pnpm nx show projects` showed:
-
-  * `@quick-chat/quick-chat-api`
-  * `@quick-chat/quick-chat-api-e2e`
-  * `@quick-chat/quick-chat-shared-types`
-  * `@quick-chat/quick-chat-shared-utils`
+- `pnpm nx show projects` showed:
+  - `@quick-chat/quick-chat-api`
+  - `@quick-chat/quick-chat-api-e2e`
+  - `@quick-chat/quick-chat-shared-types`
+  - `@quick-chat/quick-chat-shared-utils`
 
 ### 2026-06-18 — Shared Utils Import Fix
 
 Summary:
 
-* API failed to import shared utils until the shared lib was added as a workspace dependency.
-* Fixed by adding shared utils dependency to `quick-chat-api/package.json`.
+- API failed to import shared utils until the shared lib was added as a workspace dependency.
+- Fixed by adding shared utils dependency to `quick-chat-api/package.json`.
 
 Decision:
 
-* Any shared lib imported by `quick-chat-api` must be added to `quick-chat-api/package.json`.
+- Any shared lib imported by `quick-chat-api` must be added to `quick-chat-api/package.json`.
 
 Example:
 
@@ -78,14 +76,14 @@ pnpm exec tsc -p quick-chat-api/tsconfig.app.json --noEmit
 
 Result:
 
-* TypeScript passed.
+- TypeScript passed.
 
 ### 2026-06-18 — Shared Types DTO Import Test
 
 Summary:
 
-* Added/verified DTO export from `quick-chat-shared-types`.
-* API can import DTO types from shared types package.
+- Added/verified DTO export from `quick-chat-shared-types`.
+- API can import DTO types from shared types package.
 
 Example:
 
@@ -101,11 +99,11 @@ pnpm exec tsc -p quick-chat-api/tsconfig.app.json --noEmit
 
 Result:
 
-* TypeScript passed.
+- TypeScript passed.
 
 ## Current Next Planned Work
 
-* Add Docker Compose for PostgreSQL and Redis.
-* Add environment config with NestJS ConfigModule and Zod validation.
-* Add Prisma setup and connect to PostgreSQL.
-* Create base backend module folder structure.
+- Add Docker Compose for PostgreSQL and Redis.
+- Add environment config with NestJS ConfigModule and Zod validation.
+- Add Prisma setup and connect to PostgreSQL.
+- Create base backend module folder structure.

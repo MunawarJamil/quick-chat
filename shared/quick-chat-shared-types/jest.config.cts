@@ -10,7 +10,7 @@ swcJestConfig.swcrc = false;
 
 module.exports = {
   displayName: '@quick-chat/quick-chat-shared-types',
-  preset: '../jest.preset.js',
+  preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['@swc/jest', swcJestConfig],

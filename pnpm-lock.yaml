@@ -242,10 +242,10 @@ importers:
         version: link:../../prisma
       '@quick-chat/quick-chat-shared-types':
         specifier: workspace:*
-        version: link:../../quick-chat-shared-types
+        version: link:../../shared/quick-chat-shared-types
       '@quick-chat/quick-chat-shared-utils':
         specifier: workspace:*
-        version: link:../../quick-chat-shared-utils
+        version: link:../../shared/quick-chat-shared-utils
       bcrypt:
         specifier: ^6.0.0
         version: 6.0.0
@@ -289,13 +289,13 @@ importers:
         specifier: ^2.3.0
         version: 2.8.1
 
-  quick-chat-shared-types:
+  shared/quick-chat-shared-types:
     dependencies:
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
 
-  quick-chat-shared-utils:
+  shared/quick-chat-shared-utils:
     dependencies:
       tslib:
         specifier: ^2.3.0

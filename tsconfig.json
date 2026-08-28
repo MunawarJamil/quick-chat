@@ -10,10 +10,10 @@
       "path": "./apps/quick-chat-api"
     },
     {
-      "path": "./quick-chat-shared-types"
+      "path": "./shared/quick-chat-shared-types"
     },
     {
-      "path": "./quick-chat-shared-utils"
+      "path": "./shared/quick-chat-shared-utils"
     }
   ]
 }
