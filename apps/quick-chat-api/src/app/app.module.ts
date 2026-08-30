@@ -9,7 +9,9 @@ import { HealthController } from './health.controller';
 import { RequestIdMiddleware } from '../common/middleware/request-id.middleware';
 import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { WorkspaceModule } from './workspace/workspace.module';
 import { validateEnv } from '../config/env.validation';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -26,13 +28,14 @@ import { validateEnv } from '../config/env.validation';
     ]),
     AuthModule,
     PrismaModule,
+    WorkspaceModule,
   ],
   controllers: [AppController, HealthController],
   providers: [
     AppService,
     {
       provide: APP_GUARD,
-      useClass: ThrottlerGuard,  // applies to ALL routes globally
+      useClass: ThrottlerGuard,
     },
   ],
 })

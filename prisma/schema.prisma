@@ -174,6 +174,8 @@ model Workspace {
   name      String
   slug      String          @unique
   status    WorkspaceStatus @default(ACTIVE)
+  aiSettings  Json?           // Holds AI configuration, prompt templates, widget themes, etc.
+  deletedAt DateTime?       // Soft delete timestamp (null = active)
   createdAt DateTime        @default(now())
   updatedAt DateTime        @updatedAt
 
@@ -197,7 +199,9 @@ model Workspace {
 
   @@index([slug])
   @@index([status])
+  @@index([deletedAt])
 }
+
 
 model WorkspaceMember {
   id          String        @id @default(uuid())
